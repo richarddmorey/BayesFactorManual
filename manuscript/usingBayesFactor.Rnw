@@ -1,0 +1,85 @@
+\documentclass[jou,a4paper,floatsintext,draftfirst]{apa6}
+%\documentclass[fignum,nobf,doc]{apa}
+
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+\def\calH{{\cal H}}
+\def\bfy{{\mathbf y}}
+\def\bftheta{{\boldsymbol\theta}}
+
+
+\usepackage{epigraph}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsbsy}
+%\usepackage{setspace}
+%\usepackage{pdfcomment}
+%\usepackage{xspace}
+\usepackage{color,amsmath,amssymb}
+%\usepackage{framed}
+\usepackage{enumerate}
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa,natbib=true,backend=biber]{biblatex}
+%\usepackage[longnamesfirst]{natbib}
+\DeclareLanguageMapping{american}{american-apa}
+
+
+%\usepackage[T1]{fontenc}
+%\usepackage[sc]{mathpazo}
+%\linespread{1.05}         % Palatino needs more leading (space between lines)
+
+\bibliography{lab}
+\AtEveryBibitem{\clearfield{url}} 
+
+\abstract{}
+
+
+\rightheader{Practical Bayes}
+\shorttitle{Practical Bayes}
+
+\leftheader{Morey and Rouder}
+
+\twoauthors{Richard D. Morey}{Jeffrey N. Rouder}
+
+\title{Practical Bayesian Analysis with the BayesFactor}
+
+\twoaffiliations{Cardiff University}{University of Missouri}
+
+%\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+%\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\authornote{\input{wc.tex} words. Address correspondence to Richard D. Morey (richarddmorey@gmail.com).}
+
+
+\begin{document}
+
+\maketitle
+
+
+<<results='hide',echo=FALSE,message=FALSE,warning=FALSE>>=
+options(digits = 2)
+library(xtable)
+library(BayesFactor)
+set.seed(624)
+@
+
+
+blah \citep{Rouder:etal:2012} blah Figure~\ref{fig:test1}.
+
+<<test1,echo=FALSE,fig.cap='Submersible rescue attempts. See text.',fig.width=5,fig.height=5>>=
+
+plot(1:10,1:10)
+
+@
+
+
+
+
+\printbibliography
+
+
+\end{document}
